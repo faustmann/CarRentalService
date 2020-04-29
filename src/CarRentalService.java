@@ -8,12 +8,10 @@ public class CarRentalService {
     Garage garage;
     List<CarPicker> carPickers;
 
-    public CarRentalService() {
-        this.garage = new Garage();
-        // this.garage.populateGarage(100);
-        this.garage.populateGarage(2);
+    public CarRentalService(int numCars, int numCarPickers) {
+        this.garage = new Garage(numCars);
 
-        carPickers = IntStream.range(0, 10)
+        carPickers = IntStream.range(0, numCarPickers)
                 .mapToObj(no -> new CarPicker("Picker " + no, this))
                 .collect(Collectors.toList());
     }
@@ -22,7 +20,11 @@ public class CarRentalService {
         carPickers.forEach(carPicker -> carPicker.start());
     }
 
+    public void endPhase2(){
+        carPickers.forEach(carPicker -> carPicker.interrupt());
+    }
+
     public void shutdownRentalService(){
-        throw new NotImplementedException();
+        endPhase2();
     }
 }

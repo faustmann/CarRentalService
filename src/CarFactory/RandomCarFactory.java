@@ -1,3 +1,8 @@
+package CarFactory;
+
+import Model.Car;
+import Util.RandomGenerator;
+
 public class RandomCarFactory implements CarFactory{
     private static RandomCarFactory factory;
 

@@ -1,5 +1,7 @@
-abstract class Car {
-    protected NumberPlate numberPlate;
+package Model;
+
+public abstract class Car {
+    protected final NumberPlate numberPlate;
     protected int kilometerReading;
     protected int kilometerSinceLastInspection;
     protected boolean available;
@@ -37,14 +39,13 @@ abstract class Car {
         return kilometerSinceLastInspection;
     }
 
-    // TODO maybe find a way not to use this setter method
     public void setAvailable(boolean available) {
         this.available = available;
     }
 
-    abstract int getInspectionInterval();
+    public abstract int getInspectionInterval();
 
-    abstract double getRentalCostPerDay();
+    public abstract double getRentalCostPerDay();
 
     @Override
     public String toString() {

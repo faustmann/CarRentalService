@@ -1,3 +1,5 @@
+package Model;
+
 public class PassengerCar extends Car {
     private static int inspectionInterval = 30000;
 
@@ -9,12 +11,12 @@ public class PassengerCar extends Car {
     }
 
     @Override
-    int getInspectionInterval() {
+    public int getInspectionInterval() {
         return inspectionInterval;
     }
 
     @Override
-    double getRentalCostPerDay() {
+    public double getRentalCostPerDay() {
         return 50.00;
     }
 

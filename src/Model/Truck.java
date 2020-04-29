@@ -1,3 +1,5 @@
+package Model;
+
 public class Truck extends Car{
     private static int inspectionInterval = 20000;
 
@@ -9,12 +11,12 @@ public class Truck extends Car{
     }
 
     @Override
-    int getInspectionInterval() {
+    public int getInspectionInterval() {
         return inspectionInterval;
     }
 
     @Override
-    double getRentalCostPerDay() {
+    public double getRentalCostPerDay() {
         return maxPayload <= 1800 ? 70.00 : 150.00;
     }
 

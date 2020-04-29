@@ -1,3 +1,5 @@
+package Model;
+
 public class ReturnInfo {
     double cost;
     boolean inspectionNecessary;
